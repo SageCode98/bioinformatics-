@@ -332,6 +332,26 @@ print(q)
 pythoncode_script1 (END) 
 
 
+R studio code 
+data query data 
+library("biomaRt")
+
+ensembl = useMart("fungal_mart", dataset='scerevisiae_eg_gene',host="fungi.ensembl.org")
+
+getBM(attributes=c('entrezgene','external_gene_name','name_1006','go_linkage_type'), filters='go', values= 'GO:0006623', mart=ensembl) 
+End.
+
+
+data query for Clinvar SNPs:
+getBM(attributes = c('refsnp_id','refsnp_source','chrom_start','chr_name','chrom_end','translation_start','translation_end','consequence_type_tv','sift_prediction','polyphen_prediction'), 
+filters = c('chr_name'), 
+values = list(1), 
+mart = snpmart)
+
+
+
+
+
 
 
 
