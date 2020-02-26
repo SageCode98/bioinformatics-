@@ -1,46 +1,4 @@
-# bioinformatics-
-bioinformatic python, SQL and R studio code 
-SQL code to creat and edit Genbank table 
--> CREATE TABLE genes (
--> ProteinID varchar(15),
--> Product varchar(200),
--> Gene varchar(100),
--> Start char(8),
--> Stop char(8),
--> locus_tag varchar(20),
--> translation varchar(2000)
--> );
 
-SELECT statement to return just the thrB gene.
-select Gene from genes where Gene= 'thrB';
-SELECT statement to return all three genes which starts with 'thr'
-mysql> select Gene from genes where gene like ('thr%');
-SELECT statement to return all genes whose start site falls between base 2500
-and 5000.
-select * from genes where start >2500 and start<5000;
-INSERT statement that could have been used to add thrB (all fields).
-insert into genes values ('ACB01208.1','Homoserine kinase','thrB',2801,3733);
-
-
-biotest database
-
-Number of entries in the organism table:
-SELECT COUNT(*) FROM organism;
-
-   
-SELECT statement which queries the locus ID and product for all genes which contain the word 
-'lyase'.
-SELECT locus_ID , product from genes where product like '%lyase%';
-
-
-Query for the locus ID, start and stop coordinates for all genes which have a start 
-coordinate between 10,000 and 50,000.
-SELECT locus_ID , start , stop from genes where start>10000 and start<50000;
-
-
- single query which
-returns all gene rows with the following two columns:   Locus ID, G
-SELECT locus_ID , genus FROM genes join organism on genes.org_id=organism.id ;
 
 Python
 basic python functions:
@@ -349,6 +307,49 @@ values = list(1),
 mart = snpmart)
 
 
+# bioinformatics-
+bioinformatic python, SQL and R studio code 
+SQL code to creat and edit Genbank table 
+-> CREATE TABLE genes (
+-> ProteinID varchar(15),
+-> Product varchar(200),
+-> Gene varchar(100),
+-> Start char(8),
+-> Stop char(8),
+-> locus_tag varchar(20),
+-> translation varchar(2000)
+-> );
+
+SELECT statement to return just the thrB gene.
+select Gene from genes where Gene= 'thrB';
+SELECT statement to return all three genes which starts with 'thr'
+mysql> select Gene from genes where gene like ('thr%');
+SELECT statement to return all genes whose start site falls between base 2500
+and 5000.
+select * from genes where start >2500 and start<5000;
+INSERT statement that could have been used to add thrB (all fields).
+insert into genes values ('ACB01208.1','Homoserine kinase','thrB',2801,3733);
+
+
+biotest database
+
+Number of entries in the organism table:
+SELECT COUNT(*) FROM organism;
+
+   
+SELECT statement which queries the locus ID and product for all genes which contain the word 
+'lyase'.
+SELECT locus_ID , product from genes where product like '%lyase%';
+
+
+Query for the locus ID, start and stop coordinates for all genes which have a start 
+coordinate between 10,000 and 50,000.
+SELECT locus_ID , start , stop from genes where start>10000 and start<50000;
+
+
+ single query which
+returns all gene rows with the following two columns:   Locus ID, G
+SELECT locus_ID , genus FROM genes join organism on genes.org_id=organism.id ;
 
 
 
